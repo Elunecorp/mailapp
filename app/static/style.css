@@ -19,6 +19,7 @@ nav {
 .content {
     margin-left: 180px;
     margin-top: 30px;
+    margin-right: 20px;
 }
 
 form input {
@@ -31,4 +32,32 @@ form input {
     outline: none;
     width: 450px;
     display: block;
+}
+
+ul {
+    padding-left: 0;
+}
+
+.mail {
+    background-color: #fff;
+    list-style-type: none;
+    margin: 0;
+    margin-bottom: 15px;
+    padding: 10px 15px;
+    box-shadow: 0 1px 5px #ddd;
+    border-radius: 5px;
+}
+
+.mail-content {
+    margin: 5px 0 0 0;
+    color: #aaa;
+}
+
+.email {
+    color: #0c19d1;    
+}
+hr {
+    border: none;
+    height: 1px;
+    background-color: #eee;
 }
