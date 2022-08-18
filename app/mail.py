@@ -1,3 +1,4 @@
+#from crypt import methods  #La importacion de este modulo causa conflicto porque no es soportado por windows
 from flask import (
     Blueprint, render_template
 )
@@ -14,4 +15,9 @@ def index():
     mails = c.fetchall()
 
     # print(mails) #print para mostrar correos en la terminal flask run
+
     return render_template('mails/index.html', mails=mails)
+
+@bp.route('/create', methods=['GET', 'POST'])
+def create():
+    return render_template('mails/create.html')
