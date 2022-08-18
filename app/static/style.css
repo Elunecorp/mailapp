@@ -71,6 +71,7 @@ ul {
     padding: 10px 15px;
     border-radius: 30px;
     text-decoration: none;
+    border: none;
 }
 
 .button:hover {
@@ -81,4 +82,28 @@ hr {
     border: none;
     height: 1px;
     background-color: #eee;
+}
+
+textarea {
+    font-family: "Raleway", sans-serif;
+    border: 0;
+    height: 250px;
+    padding: 10px 15px;
+    border-radius: 30px;
+    box-shadow: 0 1px 5px #ddd;
+    resize: none;
+    width: 450px;
+    display: block;
+    outline: none;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+form label {
+    display: inline-block;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    
 }
