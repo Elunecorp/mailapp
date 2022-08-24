@@ -23,7 +23,7 @@ def index():
 def create():
     if request.method == 'POST':
         #name = request.form.get('name')
-        phone = request.form.get('phone')
+        #phone = request.form.get('phone')
         email = request.form.get('email')
         subject = request.form.get('subject')
         content = request.form.get('content')
@@ -31,8 +31,8 @@ def create():
 
         # if not name:
         #     errors.append("El Nombre es obligatorio")
-        if not phone:
-            errors.append("El Número de Telefono o WhatsApp es obligatorio")
+        #if not phone:
+        #    errors.append("El Número de Telefono o WhatsApp es obligatorio")
         if not email:
             errors.append("Email es obligatorio")
         if not subject:
@@ -45,7 +45,7 @@ def create():
 
         if len(errors) == 0:
             db, c = get_db()
-            c.execute("INSERT INTO email (phone, email, subject, content) VALUES (%s, %s, %s, %s)", (phone, email, subject, content))
+            c.execute("INSERT INTO email (email, subject, content) VALUES (%s, %s, %s)", (email, subject, content))
             db.commit()
 
             return redirect(url_for('mail.index'))
