@@ -1,11 +1,11 @@
-import mysql.connector
+import mysql.connector #import dependencia para mysql
 
 import click
 from flask import current_app, g
 from flask.cli import with_appcontext
 from .schema import instructions
 
-def get_db():
+def get_db(): #Conección a BD mediante variables de entorno, estas se encuentran en el .env privado
     if 'db' not in g:
         g.db = mysql.connector.connect(
             host=current_app.config['DATABASE_HOST'],

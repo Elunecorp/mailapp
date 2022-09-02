@@ -10,3 +10,6 @@ instructions = [
         );
     """
 ]
+
+#archivo conf con las instrucciones para la db
+#Las credenciales de la db son privadas y estan en el .env que se debe crear

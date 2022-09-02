@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <title>{% block title %}{% endblock %} - Mailer</title>
-<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"> <!--Viculacion de style.css-->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600&family=Rubik:wght@400;700&family=Rufina:wght@400;700&display=swap" rel="stylesheet">
-<!--Esto es un comentario-->
+<!--Aqui arriba link de fuentes de google fonts-->
 
+<!--Bloque de la barra lateral-->
 <nav>
     Mail<b>App</b>
     Power by 
@@ -14,7 +15,7 @@
 <section class="content">
     <div class="top-bar">
         <form method="get">
-            <input name="search" type="text" placeholder="Quieres buscar algo?"/>
+            <input name="search" type="text" placeholder="Quieres buscar algo?"/> <!--Campos de Busqueda de mails-->
         </form>
         {% block action %}{% endblock %}
     </div>

@@ -13,9 +13,17 @@ bp = Blueprint('mail', __name__, url_prefix="/")
 
 @bp.route('/', methods=['GET'])
 def index():
+
+    search = request.args.get('search')
+    #print(search) print en consola para comprobar que recibe el string
+
     db, c = get_db()
 
-    c.execute("SELECT * FROM email")
+    if search is None: #Si el contenido en la variable search o campo de busqueda esta limpio 
+        c.execute("SELECT * FROM email") #entonces solo mostrar la lista de todos los email
+    else:
+        c.execute("SELECT * FROM email WHERE  email like %s", ('%' + search + '%', )) #Mostra las coincidencias de la columna de email omitiendo los espacios
+
     mails = c.fetchall()
 
     # print(mails) #print para mostrar correos en la terminal flask run
@@ -36,7 +44,7 @@ def create():
         #     errors.append("El Nombre es obligatorio")
         #if not phone:
         #    errors.append("El Número de Telefono o WhatsApp es obligatorio")
-        if not email:
+        if not email:        #Condicion para que los campos sean obligatorios y no dejarlos vacios
             errors.append("Email es obligatorio")
         if not subject:
             errors.append("El Asunto del correo es obligatorio")
